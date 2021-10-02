@@ -4,7 +4,7 @@ if($osInfo.ProductType -eq 2) {
     import-module ActiveDirectory
     $pass = Get-Credential
     Get-ADUser -Filter * | Set-ADAccountPassword -NewPassword $pass.Password -Reset
-    Get-ADUser -Filter * | Set-ADUser -AllowReversiblePasswordEncryption $false -CannotChangePassword $false -ChangePasswordAtLogon $false -PasswordNotRequired $false
+    Get-ADUser -Filter * | Set-ADUser -AllowReversiblePasswordEncryption $false -CannotChangePassword $true -ChangePasswordAtLogon $false -PasswordNotRequired $false
     $adminz = @(Get-ADGroupMember "Domain Admins" | Select-Object -ExpandProperty name)
     Foreach($a in $adminz) {
         if($a -ne "Administrator") {

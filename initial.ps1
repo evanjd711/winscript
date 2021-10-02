@@ -1,3 +1,4 @@
+Set-ExecutionPolicy Restricted
 [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12Se
 Invoke-WebRequest -uri https://github.com/evanjd711/winscript/archive/refs/heads/main.zip -OutFile $env:USERPROFILE\Downloads\win.zip
 cd $env:USERPROFILE\Downloads
