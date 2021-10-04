@@ -6,4 +6,5 @@ Add-Type -assembly "system.io.compression.filesystem"
 [io.compression.zipfile]::ExtractToDirectory("$env:USERPROFILE\Downloads\win.zip", "$env:USERPROFILE\Downloads")
 Set-ExecutionPolicy RemoteSigned -Scope Process
 Unblock-File .\winscript-main\main.ps1
+Write-Out "temp"
 .\winscript-main\main.ps1
